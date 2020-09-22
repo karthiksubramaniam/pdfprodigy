@@ -37,6 +37,8 @@
             this.txtPdfName = new MetroFramework.Controls.MetroTextBox();
             this.txtImagesDirectory = new MetroFramework.Controls.MetroTextBox();
             this.lnkAbout = new MetroFramework.Controls.MetroLink();
+            this.lblSearchPattern = new MetroFramework.Controls.MetroLabel();
+            this.txtSearchPattern = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
             // btnOpenFolderDialog
@@ -60,7 +62,7 @@
             // lblPdfName
             // 
             this.lblPdfName.AutoSize = true;
-            this.lblPdfName.Location = new System.Drawing.Point(43, 130);
+            this.lblPdfName.Location = new System.Drawing.Point(285, 130);
             this.lblPdfName.Name = "lblPdfName";
             this.lblPdfName.Size = new System.Drawing.Size(64, 19);
             this.lblPdfName.TabIndex = 3;
@@ -77,9 +79,9 @@
             // 
             // txtPdfName
             // 
-            this.txtPdfName.Location = new System.Drawing.Point(40, 152);
+            this.txtPdfName.Location = new System.Drawing.Point(285, 152);
             this.txtPdfName.Name = "txtPdfName";
-            this.txtPdfName.Size = new System.Drawing.Size(473, 23);
+            this.txtPdfName.Size = new System.Drawing.Size(228, 23);
             this.txtPdfName.TabIndex = 6;
             // 
             // txtImagesDirectory
@@ -95,14 +97,33 @@
             this.lnkAbout.Name = "lnkAbout";
             this.lnkAbout.Size = new System.Drawing.Size(75, 23);
             this.lnkAbout.TabIndex = 8;
-            this.lnkAbout.Text = "About";
+            this.lnkAbout.Text = "Credits";
             this.lnkAbout.Click += new System.EventHandler(this.lnkAbout_Click);
+            // 
+            // lblSearchPattern
+            // 
+            this.lblSearchPattern.AutoSize = true;
+            this.lblSearchPattern.Location = new System.Drawing.Point(40, 130);
+            this.lblSearchPattern.Name = "lblSearchPattern";
+            this.lblSearchPattern.Size = new System.Drawing.Size(122, 19);
+            this.lblSearchPattern.TabIndex = 9;
+            this.lblSearchPattern.Text = "Files Search Pattern";
+            // 
+            // txtSearchPattern
+            // 
+            this.txtSearchPattern.Location = new System.Drawing.Point(40, 152);
+            this.txtSearchPattern.Name = "txtSearchPattern";
+            this.txtSearchPattern.Size = new System.Drawing.Size(228, 23);
+            this.txtSearchPattern.TabIndex = 10;
+            this.txtSearchPattern.Text = "*.jpeg";
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 292);
+            this.Controls.Add(this.txtSearchPattern);
+            this.Controls.Add(this.lblSearchPattern);
             this.Controls.Add(this.lnkAbout);
             this.Controls.Add(this.txtImagesDirectory);
             this.Controls.Add(this.txtPdfName);
@@ -127,6 +148,8 @@
         private MetroFramework.Controls.MetroLabel lblPdfName;
         private MetroFramework.Controls.MetroButton btnConvertPdf;
         private MetroFramework.Controls.MetroLink lnkAbout;
+        private MetroFramework.Controls.MetroLabel lblSearchPattern;
+        private MetroFramework.Controls.MetroTextBox txtSearchPattern;
     }
 }
 

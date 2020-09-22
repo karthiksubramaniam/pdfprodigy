@@ -3,8 +3,8 @@ using iTextSharp.text.pdf;
 using MetroFramework.Forms;
 using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
-using Image = iTextSharp.text.Image;
 
 namespace PdfProdigy
 {
@@ -26,11 +26,22 @@ namespace PdfProdigy
             }
         }
 
+        private bool isDirectoryHasFiles(string directory, string searchPattern)
+        {
+            return Directory.GetFiles(directory, searchPattern).Any();
+        }
+
         private void btnConvertPdf_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtImagesDirectory.Text) || string.IsNullOrEmpty(txtPdfName.Text))
+            if (string.IsNullOrWhiteSpace(txtImagesDirectory.Text) || string.IsNullOrWhiteSpace(txtPdfName.Text) || string.IsNullOrWhiteSpace(txtSearchPattern.Text))
             {
                 MessageBox.Show("Fields are mandatory.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!isDirectoryHasFiles(txtImagesDirectory.Text, txtSearchPattern.Text))
+            {
+                MessageBox.Show("No files on specified directory.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -43,11 +54,11 @@ namespace PdfProdigy
                 PdfWriter.GetInstance(document, stream);
                 document.Open();
 
-                foreach (var imageFile in Directory.GetFiles(txtImagesDirectory.Text, "*.jpeg"))
+                foreach (var imageFile in Directory.GetFiles(txtImagesDirectory.Text, txtSearchPattern.Text))
                 {
                     using (var imageStream = new FileStream(imageFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
-                        var image = Image.GetInstance(imageStream);
+                        var image = iTextSharp.text.Image.GetInstance(imageStream);
                         if (image.Height > PageSize.A4.Height - 25)
                         {
                             image.ScaleToFit(PageSize.A4.Width - 25, PageSize.A4.Height - 25);

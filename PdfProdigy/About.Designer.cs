@@ -38,7 +38,7 @@
             // lblAuthorName
             // 
             this.lblAuthorName.AutoSize = true;
-            this.lblAuthorName.Location = new System.Drawing.Point(24, 85);
+            this.lblAuthorName.Location = new System.Drawing.Point(31, 77);
             this.lblAuthorName.Name = "lblAuthorName";
             this.lblAuthorName.Size = new System.Drawing.Size(169, 19);
             this.lblAuthorName.TabIndex = 1;
@@ -46,7 +46,7 @@
             // 
             // lblAuthorMail
             // 
-            this.lblAuthorMail.Location = new System.Drawing.Point(24, 121);
+            this.lblAuthorMail.Location = new System.Drawing.Point(31, 113);
             this.lblAuthorMail.Name = "lblAuthorMail";
             this.lblAuthorMail.Size = new System.Drawing.Size(239, 23);
             this.lblAuthorMail.TabIndex = 2;
@@ -56,7 +56,7 @@
             // 
             // lblAuthorSite
             // 
-            this.lblAuthorSite.Location = new System.Drawing.Point(24, 161);
+            this.lblAuthorSite.Location = new System.Drawing.Point(31, 153);
             this.lblAuthorSite.Name = "lblAuthorSite";
             this.lblAuthorSite.Size = new System.Drawing.Size(239, 23);
             this.lblAuthorSite.TabIndex = 3;
@@ -66,7 +66,7 @@
             // 
             // lblAuthorTwt
             // 
-            this.lblAuthorTwt.Location = new System.Drawing.Point(24, 202);
+            this.lblAuthorTwt.Location = new System.Drawing.Point(31, 194);
             this.lblAuthorTwt.Name = "lblAuthorTwt";
             this.lblAuthorTwt.Size = new System.Drawing.Size(239, 23);
             this.lblAuthorTwt.TabIndex = 4;
@@ -76,7 +76,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(114, 254);
+            this.btnClose.Location = new System.Drawing.Point(121, 246);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 5;
@@ -99,7 +99,7 @@
             this.Name = "About";
             this.Resizable = false;
             this.ShowInTaskbar = false;
-            this.Text = "About";
+            this.Text = "Credits";
             this.ResumeLayout(false);
             this.PerformLayout();
 

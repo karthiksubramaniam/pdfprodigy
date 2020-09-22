@@ -3,3 +3,6 @@
 ################################################################################
 
 /.vs/PdfProdigy/v16
+/packages
+/PdfProdigy/obj/Debug
+/PdfProdigy.Setup/Debug
